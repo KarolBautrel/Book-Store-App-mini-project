@@ -2,19 +2,18 @@ from tkinter import *
 from tkinter import ttk
 import backend
 
-<<<<<<< HEAD
 # Function for selecting rows in listbox
 
 
 def get_selected_row(event):  # event is an special parameter for func in bind method
-    try:
+  
         global selected_tuple
         # pointing at index of row in listbox, [0] means frist element in tuple
         index = list1.curselection()[0]
         # from the list1 get the tuple saved in index
-
+        
         selected_tuple = list1.get(index)
-
+        
         e1.delete(0, END)  # clearing widget
         # filing entry one with title which is second element of tuple
         e1.insert(END, selected_tuple[1])
@@ -24,8 +23,6 @@ def get_selected_row(event):  # event is an special parameter for func in bind m
         e3.insert(END, selected_tuple[3])
         e4.delete(0, END)
         e4.insert(END, selected_tuple[4])
-    except IndexError:
-        pass
     return (selected_tuple)
 # function for view button
 
@@ -99,11 +96,7 @@ ISBNtext = StringVar()
 e4 = Entry(window, textvariable=ISBNtext)
 e4.grid(row=1, column=3)
 
-<<<<<<< HEAD
 list1 = Listbox(window, height=10, width=40)
-=======
-list1 = Listbox(window, height=10, width=30)
->>>>>>> a2fe7e6d470b89cfbb248fc2953856874f70670b
 list1.grid(row=2, column=0, rowspan=6, columnspan=2)
 
 sb1 = ttk.Scrollbar(window)  # stworzenie scrollbara
@@ -113,7 +106,6 @@ sb1.grid(column=2, row=2, rowspan=6)
 list1.configure(yscrollcommand=sb1.set)  # przypisanie go do listboxa
 sb1.configure(command=list1.yview)  # przypisanie go zeby byl w osi y listboxa
 
-<<<<<<< HEAD
 # Bind is an methos (firstargument, function)
 list1.bind('<<ListboxSelect>>', get_selected_row)
 
@@ -144,25 +136,5 @@ b6 = ttk.Button(window, text="Close", width=12,
 b6.grid(row=7, column=3)
 
 print(list1)
-=======
-b1 = ttk.Button(window, text="View all", width=12, style="Toggle.TButton", command=pass)
-b1.grid(row=2, column=3)
-
-b2 = ttk.Button(window, text="Search entry", width=12, style="Toggle.TButton")
-b2.grid(row=3, column=3)
-
-b3 = ttk.Button(window, text="Add entry", width=12, style="Toggle.TButton")
-b3.grid(row=4, column=3)
-
-b4 = ttk.Button(window, text="Update", width=12, style="Toggle.TButton")
-b4.grid(row=5, column=3)
-
-b5 = ttk.Button(window, text="Delete", width=12, style="Toggle.TButton")
-b5.grid(row=6, column=3)
-
-b6 = ttk.Button(window, text="Close", width=12, style="Toggle.TButton")
-b6.grid(row=7, column=3)
-
->>>>>>> a2fe7e6d470b89cfbb248fc2953856874f70670b
 
 window.mainloop()
