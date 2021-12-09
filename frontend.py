@@ -6,14 +6,14 @@ import backend
 
 
 def get_selected_row(event):  # event is an special parameter for func in bind method
-  
+
         global selected_tuple
         # pointing at index of row in listbox, [0] means frist element in tuple
         index = list1.curselection()[0]
         # from the list1 get the tuple saved in index
-        
+
         selected_tuple = list1.get(index)
-        
+
         e1.delete(0, END)  # clearing widget
         # filing entry one with title which is second element of tuple
         e1.insert(END, selected_tuple[1])
@@ -61,9 +61,6 @@ def update_command():
 window = Tk()
 
 window.wm_title("Bookstore")
-=======
-window = Tk()
->>>>>>> a2fe7e6d470b89cfbb248fc2953856874f70670b
 card = ttk.Frame(window, style='Card.TFrame', padding=(5, 6, 7, 8))
 window.call("source", "sun-valley.tcl")
 window.call("set_theme", "dark")
