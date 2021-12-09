@@ -65,3 +65,11 @@ def update(id, title, author, year, isbn):
 
 
 connect()
+<<<<<<< HEAD
+=======
+
+
+update(1, "The ocean", "John Smooth", 1917, 12123)
+
+print(view())
+>>>>>>> a2fe7e6d470b89cfbb248fc2953856874f70670b
